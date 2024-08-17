@@ -172,7 +172,7 @@ const updateProduct = async (req: Request, res: Response) => {
   }
 };
 
-// we can export this main product controllers for using another file
+// export all controllers
 export const ProductControllers = {
   createProduct,
   getAllProducts,

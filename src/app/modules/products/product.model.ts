@@ -64,5 +64,5 @@ const productSchema = new Schema<Product>({
   },
 });
 
-// we can export this main schema model for using another file
+// export this schema model for using another file
 export const ProductModel = model<Product>('Product', productSchema);
