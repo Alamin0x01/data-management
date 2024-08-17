@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
 import { Order } from './order.interface';
 
-// make this schema for order data
+// schema for order data
 const orderSchema = new Schema<Order>({
   email: {
     type: String,

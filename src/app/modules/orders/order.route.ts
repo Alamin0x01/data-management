@@ -3,8 +3,7 @@ import { OrderControllers } from './order.controller';
 
 const router = express.Router();
 
-// this all routes call the controllers function to :
-// create or post a new order
+// create order
 router.post('/', OrderControllers.createOrder);
 
 // get all orders

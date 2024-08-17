@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { OrderServices } from './order.service';
 import orderValidationSchema from './order.validation';
 
-// this is controller for creating a order
+// creating a order
 const createOrder = async (req: Request, res: Response) => {
   try {
     const orderData = req.body;
@@ -24,7 +24,7 @@ const createOrder = async (req: Request, res: Response) => {
   }
 };
 
-// this control handle to get all products and find order by individual user email
+// get all products and find order by individual user email address
 const getAllOrders = async (req: Request, res: Response) => {
   try {
     const { email } = req.query as { email: string };
@@ -53,7 +53,7 @@ const getAllOrders = async (req: Request, res: Response) => {
   }
 };
 
-// find a single product by using id and get error when id doesn't match
+// find a single product by using id and get error when id doesn't match with any product
 const getSingleOrder = async (req: Request, res: Response) => {
   try {
     const { orderId } = req.params;
