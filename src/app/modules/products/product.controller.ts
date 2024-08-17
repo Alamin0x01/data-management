@@ -100,7 +100,6 @@ const getSingleProduct = async (req: Request, res: Response) => {
       data: result,
     });
   } catch (err: any) {
-    // If an error occurs, return a 500 status code
     res.status(500).json({
       success: false,
       message: 'Product not found',
@@ -137,7 +136,7 @@ const deleteProduct = async (req: Request, res: Response) => {
   }
 };
 
-// for update the product, this control work for it
+// update the product, this control work for it
 const updateProduct = async (req: Request, res: Response) => {
   try {
     const { productId } = req.params;
@@ -152,13 +151,11 @@ const updateProduct = async (req: Request, res: Response) => {
     );
 
     if (result) {
-      res
-        .status(200)
-        .json({
-          success: true,
-          message: 'Product updated successfully!',
-          product: result,
-        });
+      res.status(200).json({
+        success: true,
+        message: 'Product updated successfully!',
+        product: result,
+      });
     } else {
       res.status(404).json({ message: 'Product not found' });
     }
