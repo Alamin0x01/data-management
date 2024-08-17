@@ -6,7 +6,7 @@ import {
 } from './product.validation';
 import { ZodError } from 'zod';
 
-// creating a product into database
+// creating a product into database this control handle this
 const createProduct = async (req: Request, res: Response) => {
   try {
     const productData = req.body;

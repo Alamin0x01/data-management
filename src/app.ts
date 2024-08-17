@@ -5,7 +5,7 @@ import { OrderRoute } from './app/modules/orders/order.route';
 
 const app: Application = express();
 
-// parser
+// parser middleware
 app.use(express.json());
 app.use(cors());
 
@@ -21,7 +21,7 @@ const getAController = (req: Request, res: Response) => {
 // main server
 app.get('/', getAController);
 
-// Handle other or false route and return a 404 error
+// 404 route
 app.use('*', (req: Request, res: Response) => {
   res.status(404).json({
     success: false,
