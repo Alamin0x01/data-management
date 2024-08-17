@@ -1,4 +1,6 @@
-# data-management
+# Data Management App
+
+## Live link: https://data-management-rouge.vercel.app
 
 **Objective:** Develop a Express application with TypeScript as the programming language, integrating MongoDB with Mongoose for effective data management. Ensure data integrity through validation using Joi/Zod.
 
@@ -32,8 +34,6 @@
   - An object representing the product's inventory details.
     - **quantity** (number): The available quantity of the product in stock.
     - **inStock** (boolean): Indicates whether the product is currently in stock.
-
-## Main Section (50 Marks):
 
 ## Product Management
 
@@ -246,6 +246,7 @@
 - **Endpoint**: **`/api/products/:productId`**
 - **Method: `DELETE`**
 - **Sample Response**:
+
   ```json
   {
     "success": true,

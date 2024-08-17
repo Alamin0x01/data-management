@@ -171,7 +171,7 @@ const updateProduct = async (req: Request, res: Response) => {
     }
   }
 };
-
+//
 // export all controllers
 export const ProductControllers = {
   createProduct,
