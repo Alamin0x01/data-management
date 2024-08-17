@@ -1,5 +1,5 @@
-import cors from 'cors';
 import express, { Application, Request, Response } from 'express';
+import cors from 'cors';
 import { ProductRoute } from './app/modules/products/product.route';
 import { OrderRoute } from './app/modules/orders/order.route';
 
@@ -15,7 +15,7 @@ app.use('/api/orders', OrderRoute);
 
 // server
 const getAController = (req: Request, res: Response) => {
-  res.send('Welcome to our product management app!');
+  res.send('Welcome to our Data management app');
 };
 
 // main server
