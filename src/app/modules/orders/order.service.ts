@@ -7,7 +7,7 @@ const createOrderIntoDB = async (order: Order) => {
   // find the product
   const product = await ProductModel.findById(order.productId);
 
-  // if product is not found, throw an error
+  // if product is not found, throw an error message
   if (!product) {
     throw new Error('Product not found');
   }
@@ -52,7 +52,7 @@ const createOrderIntoDB = async (order: Order) => {
   return result;
 };
 
-// service work for get all orders and find orders by user email
+// service work for get all orders and find orders by user email address
 
 const getAllOrdersFromDB = async (email: string): Promise<Order[] | null> => {
   const $regex = new RegExp(email, 'i');
@@ -79,7 +79,7 @@ const retrieveOrdersFromDb = async (
   }
 };
 
-// service for a single order
+// service for a single order by using id
 const getSingleOrderFromDB = async (_id: string) => {
   const result = await OrderModel.findOne({ _id });
   return result;

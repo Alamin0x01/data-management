@@ -7,7 +7,7 @@ const createProductIntoDB = async (product: Product) => {
   return result;
 };
 
-// this service work for get all product and search by a value
+// get all product and search by a value
 const getAllProductsFromDB = async (
   searchTerm: object,
 ): Promise<Product[] | null> => {
@@ -40,7 +40,7 @@ const updateProductFromDB = async (
     return result;
   } catch (error) {
     console.error(`Failed to update product with id ${_id}:`, error);
-    throw error; // Propagate the error for higher-level handling
+    throw error;
   }
 };
 

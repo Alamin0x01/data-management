@@ -6,13 +6,13 @@ import {
 } from './product.validation';
 import { ZodError } from 'zod';
 
-// this is controller for creating a product
+// creating a product into database
 const createProduct = async (req: Request, res: Response) => {
   try {
     const productData = req.body;
     const parsedProductData = productValidationSchema.parse(productData);
 
-    // for send this data we can call service function
+    // for send this data we can call service function and pass this data
     const result = await ProductServices.createProductIntoDB(parsedProductData);
 
     // for send response
@@ -36,7 +36,6 @@ const getAllProducts = async (req: Request, res: Response) => {
     const searchTerm = req.query.searchTerm;
     const query: any = {};
 
-    // If the search term is provided, create a query to search for products
     // based on their name, category, and description
     if (searchTerm) {
       query.$or = [
@@ -155,7 +154,11 @@ const updateProduct = async (req: Request, res: Response) => {
     if (result) {
       res
         .status(200)
-        .json({ success: true, message: 'Product updated successfully!', product: result });
+        .json({
+          success: true,
+          message: 'Product updated successfully!',
+          product: result,
+        });
     } else {
       res.status(404).json({ message: 'Product not found' });
     }
